@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+<nav>
+    <ul class="flex space-x-6">
+        <li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">About</a></li>
+		<li><a href="{{ url_for('features') }}" class="text-gray-600 hover:text-blue-600">Upcoming Features</a></li>
+    	<li><a href="{{ url_for('contact') }}" class="text-gray-600 hover:text-blue-600">Contact</a></li>
+        <li><a href="{{ url_for('register') }}" class="text-gray-600 hover:text-blue-600">Register</a></li>
+        <li><a href="{{ url_for('login') }}" class="text-gray-600 hover:text-blue-600">Login</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- Title Section -->
+<section class="relative bg-cover bg-center text-white py-20" style="background-image: url('https://searchengineland.com/figz/wp-content/seloads/2018/04/responsive-design-ss-1.jpg');">
+    <div class="container mx-auto text-center"  style="background-color: rgba(0, 0, 0, 0.747); width: fit-content; padding: 10px;">
+        <h1 class="text-5xl font-bold uppercase tracking-wide">About Us</h1>
+		<p class="text-lg mt-4 font-light">Discover our journey, mission, and passion for bringing you the best</p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto">
+        <!-- Welcome Section -->
+        <div class="flex flex-wrap items-center mb-16">
+            <div class="w-full md:w-1/2 p-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Try & Buy</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    TRY & BUY is your ultimate destination for exploring fashion with convenience. Similar to an in-store changing room, our platform allows buyers to virtually try clothes for the perfect fit. Whether you're looking for T-shirts, Jeans, Sunglasses, or Caps, we've got you covered with the best quality and prices.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Established in 2019, TRY & BUY aims to make every special occasion even more memorable. With a dedicated design team, we bring you the latest fashion trends for every season. Join us as we turn our slogan into action: <span class="font-bold italic">"TRY & BUY, Walk in for the Fashion, Stay in for the Style."</span>
+                </p>
+            </div>
+            <div class="w-full md:w-1/2 p-6">
+                <img class="rounded-lg shadow-lg" src="https://sc01.alicdn.com/kf/HTB1VdzmaMLD8KJjSszeq6yGRpXa6/221149179/HTB1VdzmaMLD8KJjSszeq6yGRpXa6.jpg" alt="Try and Buy">
+            </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="flex flex-wrap items-center">
+            <div class="w-full md:w-1/2 p-6">
+                <img class="rounded-lg shadow-lg" src="https://4.bp.blogspot.com/-o9jB7naqQj4/XKJddtaiK8I/AAAAAAAAHy0/8u7xQWdnJMcuQqyukPhdq3jIWUZ1LODKQCLcBGAs/s1600/m.jpg" alt="Our Mission" style="height: 300px; width: 400px;">
+            </div>
+            <div class="w-full md:w-1/2 p-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Our mission is to revolutionize online shopping by providing a virtual trial room that offers users a superior design, quality, and a preview of how the product looks on them. We are committed to offering exceptional services and real value to our customers.
+                </p>
+                <blockquote class="border-l-4 border-blue-600 pl-4 italic text-gray-600">
+                    "Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while." 
+                    <span class="font-bold">- Steve Jobs</span>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="bg-blue-600 py-16">
+    <div class="container mx-auto text-center text-white">
+        <h2 class="text-4xl font-bold mb-4">Start Your Journey with TRY & BUY</h2>
+        <p class="text-lg mb-6">Discover fashion like never before with hand-picked styles from the best brands.</p>
+        <a href="{{ url_for('register') }}" class="px-8 py-3 bg-white text-blue-600 rounded-full shadow-lg hover:bg-gray-100 transition">Join Us Today</a>
+    </div>
+</section>
+
+{% endblock %}

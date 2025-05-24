@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+	<nav>
+		<ul class="flex space-x-6">
+			<li><a href="{{ url_for('home') }}" class="text-gray-600 hover:text-blue-600">Home</a></li>
+			<li><a href="{{ url_for('product') }}" class="text-gray-600 hover:text-blue-600">Shop</a></li>
+			<li><a href="{{ url_for('cart') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">Cart</a></li>
+			<li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Logout</a></li>
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- Title Section -->
+<section class="relative bg-cover bg-center text-white py-20" style="background-image: url('https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');">
+    <div class="container mx-auto text-center" style="background-color: rgba(0, 0, 0, 0.747); width: fit-content; padding: 10px;">
+        <h1 class="text-5xl font-bold uppercase tracking-wide">Image Trail</h1>
+        <p class="text-lg mt-4 font-light">Updates image!</p>
+    </div>
+</section>
+
+<!-- Login Form Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <center>
+            <img src="/static/saved_images/generated_image.jpg" style="height: 500px; width: 500px;"><br><br>
+
+            <a href="/cart" class="btn btn-primary">Go to Cart</a>
+        </center>
+    </div>
+</section>
+
+{% endblock %}
