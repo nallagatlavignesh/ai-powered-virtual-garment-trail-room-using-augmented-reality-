@@ -1,0 +1,126 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+<nav>
+    <ul class="flex space-x-6">
+        <li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="text-gray-600 hover:text-blue-600">About</a></li>
+		<li><a href="{{ url_for('features') }}" class="text-gray-600 hover:text-blue-600">Upcoming Features</a></li>
+        <li><a href="{{ url_for('contact') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">Contact</a></li>
+        <li><a href="{{ url_for('register') }}" class="text-gray-600 hover:text-blue-600">Register</a></li>
+        <li><a href="{{ url_for('login') }}" class="text-gray-600 hover:text-blue-600">Login</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- Title Section -->
+<section class="relative bg-cover bg-center text-white py-20" style="background-image: url('https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');">
+    <div class="container mx-auto text-center" style="background-color: rgba(0, 0, 0, 0.747); width: fit-content; padding: 10px;">
+        <h1 class="text-5xl font-bold uppercase tracking-wide">Contact Us</h1>
+        <p class="text-lg mt-4 font-light">We'd love to hear from you! Reach out to us anytime.</p>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Address -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center space-x-4">
+                <span class="text-blue-600 text-3xl">
+                    <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Address</h3>
+                    <p class="text-gray-600">
+                        SGH001350, SHREEDEEP Residency,<br>
+                        Behind CHARUSAT Hospital,<br>
+                        Changa-388421, Gujarat, India
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center space-x-4">
+                <span class="text-blue-600 text-3xl">
+                    <i class="fas fa-phone-alt"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Phone</h3>
+                    <p class="text-gray-600">+91 87807 74592</p>
+                    <p class="text-gray-600">+91 63551 19697</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center space-x-4">
+                <span class="text-blue-600 text-3xl">
+                    <i class="fas fa-envelope"></i>
+                </span>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Email</h3>
+                    <p class="text-gray-600">18ce031@charusat.edu.in</p>
+                    <p class="text-gray-600">18dcs100@charusat.edu.in</p>
+                    <p class="text-gray-600">18dcs125@charusat.edu.in</p>
+                    <p class="text-gray-600">18dcs134@charusat.edu.in</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Members Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Meet Our Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Member 1 -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+                <img class="w-32 h-32 mx-auto rounded-full mb-4" src="static/images/pruthil.jpg" alt="Pruthil Hirpara">
+                <h3 class="text-xl font-semibold text-gray-800">Pruthil Hirpara</h3>
+                <p class="text-gray-600">+91 63592 61969</p>
+                <p class="text-gray-600">18ce031@charusat.edu.in</p>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+                <img class="w-32 h-32 mx-auto rounded-full mb-4" src="static/images/dipal.jpg" alt="Dipal Surati">
+                <h3 class="text-xl font-semibold text-gray-800">Dipal Surati</h3>
+                <p class="text-gray-600">+91 70438 20480</p>
+                <p class="text-gray-600">18dcs125@charusat.edu.in</p>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+                <img class="w-32 h-32 mx-auto rounded-full mb-4" src="static/images/parth.jpeg" alt="Parth Vasoya">
+                <h3 class="text-xl font-semibold text-gray-800">Parth Vasoya</h3>
+                <p class="text-gray-600">+91 63551 19697</p>
+                <p class="text-gray-600">18dcs134@charusat.edu.in</p>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+                <img class="w-32 h-32 mx-auto rounded-full mb-4" src="static/images/my.jpg" alt="Vandit Rogheliya">
+                <h3 class="text-xl font-semibold text-gray-800">Vandit Rogheliya</h3>
+                <p class="text-gray-600">+91 87807 74592</p>
+                <p class="text-gray-600">18dcs100@charusat.edu.in</p>
+            </div>
+
+            <!-- Mentor -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+                <img class="w-32 h-32 mx-auto rounded-full mb-4" src="static/images/kp.jpg" alt="Krishna Patel">
+                <h3 class="text-xl font-semibold text-gray-800">Krishna Patel (Mentor)</h3>
+                <p class="text-gray-600">+91 84601 29862</p>
+                <p class="text-gray-600">krishnapatel.ce@charusat.edu.in</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

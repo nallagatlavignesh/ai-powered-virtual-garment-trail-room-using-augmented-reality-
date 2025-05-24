@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+	<nav>
+		<ul class="flex space-x-6">
+			<li><a href="{{ url_for('admin') }}" class="text-gray-600 hover:text-blue-600">Home</a></li>
+			<li><a href="{{ url_for('add_cloths') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">Add Items</a></li>
+			<li><a href="{{ url_for('manage_cloths') }}" class="text-gray-600 hover:text-blue-600">Manage Items</a></li>
+			<li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Logout</a></li>
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- Title Section -->
+<section class="relative bg-cover bg-center text-white py-20" style="background-image: url('https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');">
+    <div class="container mx-auto text-center" style="background-color: rgba(0, 0, 0, 0.747); width: fit-content; padding: 10px;">
+        <h1 class="text-5xl font-bold uppercase tracking-wide">Add Clothes</h1>
+        <p class="text-lg mt-4 font-light">Fill in the details to add a new item to the inventory.</p>
+    </div>
+</section>
+
+<!-- Add Clothes Form -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Add New Clothes</h2>
+        <form action="{{ url_for('add_cloths') }}" method="post" enctype="multipart/form-data" class="space-y-6">
+            <!-- Category -->
+            <div>
+                <label for="category" class="block text-gray-700 font-semibold mb-2">Category</label>
+                <select name="category" id="category" class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                    <option value="">Choose a category</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                </select>
+            </div>
+
+            <!-- Name -->
+            <div>
+                <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name of the dress" required
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Cost -->
+            <div>
+                <label for="cost" class="block text-gray-700 font-semibold mb-2">Cost</label>
+                <input type="number" step="0.01" name="cost" id="cost" placeholder="Cost of the dress" required
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Image -->
+            <div>
+                <label for="img" class="block text-gray-700 font-semibold mb-2">Upload Image</label>
+                <input type="file" name="img" id="img" accept="image/*" required
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition-all duration-300">
+                    Add Item
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+	<nav>
+		<ul class="flex space-x-6">
+			<li><a href="{{ url_for('home') }}" class="text-gray-600 hover:text-blue-600">Home</a></li>
+			<li><a href="{{ url_for('product') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">Shop</a></li>
+			<li><a href="{{ url_for('cart') }}" class="text-gray-600 hover:text-blue-600">Cart</a></li>
+			<li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Logout</a></li>
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block content %}
+	<div class="bg-gray-100 py-16">
+		<div class="container mx-auto px-6 lg:px-20">
+			<!-- Filter Buttons -->
+			<div class="flex justify-center space-x-4 mb-8">
+				<button 
+					class="px-6 py-2 bg-blue-700 text-white font-medium rounded-lg filter-btn"
+					data-category-btn="all"
+					onclick="filterProducts('all')">
+					All Products
+				</button>
+				<button 
+					class="px-6 py-2 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition filter-btn"
+					data-category-btn="men"
+					onclick="filterProducts('men')">
+					Men
+				</button>
+				<button 
+					class="px-6 py-2 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition filter-btn"
+					data-category-btn="women"
+					onclick="filterProducts('women')">
+					Women
+				</button>
+			</div>
+
+			<!-- Product Grid -->
+			<div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				{% for product in gallery_data %}
+				<div 
+					class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 product-card" 
+					data-category="{{ product.category }}">
+
+					<img src="/static/images/Tops4/{{ product.img }}" alt="{{ product.name }}" class="w-full h-60 object-cover">
+
+					<div class="p-4">
+						<h3 class="text-gray-800 font-medium text-lg">{{ product.name }}</h3>
+						<p class="text-blue-600 font-bold">Rs {{ product.cost }}</p>
+
+						<form action="{{url_for('product')}}" method="post">
+							<input hidden name="id" value="{{ product.id }}">
+							<button type="submit" class="mt-4 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+								Add to Cart
+							</button>
+						</form>
+						
+					</div>
+
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Function to filter products
+		function filterProducts(category) {
+			// Filter product cards based on the category
+			const productCards = document.querySelectorAll('.product-card');
+			productCards.forEach(card => {
+				if (category === 'all' || card.getAttribute('data-category') === category) {
+					card.style.display = 'block'; // Show products matching the category
+				} else {
+					card.style.display = 'none'; // Hide other products
+				}
+			});
+
+			// Update the active button style
+			const filterButtons = document.querySelectorAll('.filter-btn');
+			filterButtons.forEach(button => {
+				button.classList.remove('bg-blue-700', 'text-white'); // Remove active styles
+				button.classList.add('bg-gray-600', 'hover:bg-gray-700', 'text-white'); // Reset default styles
+			});
+
+			// Add active styles to the clicked button
+			const activeButton = document.querySelector(`[data-category-btn="${category}"]`);
+			if (activeButton) {
+				activeButton.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+				activeButton.classList.add('bg-blue-700', 'text-white'); // Highlight active button
+			}
+		}
+	</script>
+
+{% endblock %}
+

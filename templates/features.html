@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+<nav>
+    <ul class="flex space-x-6">
+        <li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="text-gray-600 hover:text-blue-600">About</a></li>
+        <li><a href="{{ url_for('features') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">Upcoming Features</a></li>
+        <li><a href="{{ url_for('contact') }}" class="text-gray-600 hover:text-blue-600">Contact</a></li>
+        <li><a href="{{ url_for('register') }}" class="text-gray-600 hover:text-blue-600">Register</a></li>
+        <li><a href="{{ url_for('login') }}" class="text-gray-600 hover:text-blue-600">Login</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- Title Section -->
+<section class="relative bg-cover bg-center text-white py-20" style="background-image: url('https://lpwynwood.files.wordpress.com/2013/10/edit-9256.jpg');">
+    <div class="container mx-auto text-center" style="background-color: rgba(0, 0, 0, 0.747); width: fit-content; padding: 10px;">
+        <h1 class="text-5xl font-bold uppercase tracking-wide">Upcoming Features</h1>
+        <p class="text-lg mt-4 font-light">Explore the new additions to our collection!</p>
+    </div>
+</section>
+
+<!-- Features Slider -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="/static/images/features-3.jpg" alt="Sunglasses" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Sunglasses</h3>
+                    <p class="text-gray-600 mb-4">
+                        Discover our exclusive collection of sunglasses for men and women. Enjoy the latest trends at unbeatable prices. 
+                    </p>
+                    <a href="{{url_for('login')}}" class="text-blue-600 font-bold hover:underline">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="/static/images/features-2.jpg" alt="Sports Shoes" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Sports Shoes</h3>
+                    <p class="text-gray-600 mb-4">
+                        Elevate your game with our premium sports shoes. Designed for comfort, style, and performance.
+                    </p>
+                    <a href="{{url_for('login')}}" class="text-blue-600 font-bold hover:underline">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="/static/images/features-5.jpg" alt="Watches" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Watches</h3>
+                    <p class="text-gray-600 mb-4">
+                        Timeless elegance at your fingertips. Explore our range of branded watches in various styles.
+                    </p>
+                    <a href="{{url_for('login')}}" class="text-blue-600 font-bold hover:underline">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="/static/images/necklace.jpg" alt="Necklaces" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Necklaces</h3>
+                    <p class="text-gray-600 mb-4">
+                        From traditional to trendy, our necklace collection has something for every occasion.
+                    </p>
+                    <a href="{{url_for('login')}}" class="text-blue-600 font-bold hover:underline">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="/static/images/earings.png" alt="Earrings" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Earrings</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete your look with our exquisite earring collection. Perfect for any event or outfit.
+                    </p>
+                    <a href="{{url_for('login')}}" class="text-blue-600 font-bold hover:underline">Explore More</a>
+                </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="/static/images/features-4.jpg" alt="Tiaras" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tiaras</h3>
+                    <p class="text-gray-600 mb-4">
+                        Be the center of attention with our beautiful tiaras. Perfect for weddings and special occasions.
+                    </p>
+                    <a href="{{url_for('login')}}" class="text-blue-600 font-bold hover:underline">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

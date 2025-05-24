@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+	<nav>
+		<ul class="flex space-x-6">
+			<li><a href="{{ url_for('admin') }}" class="text-gray-600 hover:text-blue-600 font-bold text-blue-600">Home</a></li>
+			<li><a href="{{ url_for('add_cloths') }}" class="text-gray-600 hover:text-blue-600">Add Items</a></li>
+			<li><a href="{{ url_for('manage_cloths') }}" class="text-gray-600 hover:text-blue-600">Manage Items</a></li>
+			<li><a href="{{ url_for('index') }}" class="text-gray-600 hover:text-blue-600">Logout</a></li>
+		</ul>
+	</nav>
+{% endblock %}
+
+{% block content %}
+
+<!-- Title Section -->
+<section class="relative bg-cover bg-center text-white py-20" style="background-image: url('https://cdn.andamen.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/n/andamen-3.0-indus-773.jpg');">
+    <div class="container mx-auto text-center" style="background-color: rgba(0, 0, 0, 0.747); width: fit-content; padding: 10px;">
+        <h1 class="text-5xl font-bold uppercase tracking-wide">Welcome, Admin!</h1>
+        <p class="text-lg mt-4 font-light">Manage your platform seamlessly.</p>
+    </div>
+</section>
+
+<!-- Admin Actions Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Add Items -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://img.freepik.com/free-photo/stylish-modern-sports-clothes-hanger-minimal-style_158595-5676.jpg?w=2000" alt="Add Items" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Add Items</h3>
+                    <p class="text-gray-600 mb-4">Add new items to your store and expand your collection effortlessly.</p>
+                    <a href="{{ url_for('add_cloths') }}" class="text-blue-600 font-bold hover:underline">Add Now</a>
+                </div>
+            </div>
+
+            <!-- Manage Items -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8MTY2NTgxOTk1OA&ixlib=rb-1.2.1&q=80&w=1080" alt="Manage Items" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Manage Items</h3>
+                    <p class="text-gray-600 mb-4">Update, delete, or make changes to existing items in your store.</p>
+                    <a href="{{ url_for('manage_cloths') }}" class="text-blue-600 font-bold hover:underline">Manage Now</a>
+                </div>
+            </div>
+
+            <!-- Logout -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://img.freepik.com/free-vector/logout-concept-illustration_114360-7905.jpg?w=2000" alt="Logout" class="w-full h-48 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Logout</h3>
+                    <p class="text-gray-600 mb-4">Securely log out from the admin panel to ensure data protection.</p>
+                    <a href="{{ url_for('index') }}" class="text-blue-600 font-bold hover:underline">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
