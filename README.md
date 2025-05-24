@@ -1,1 +1,1 @@
-# ai-powered-virtual-garment-trail-room-using-augmented-reality-
+# AI-powered-virtual-garment-trail-room-using-augmented-reality-
